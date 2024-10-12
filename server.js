@@ -18,7 +18,12 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://tyohar.netlify.app/', // replace with your Netlify domain
+  credentials: true
+}));
+
 app.use(express.json({ limit: '10mb' })); // Increase limit to 10MB
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(morgan("dev"));
