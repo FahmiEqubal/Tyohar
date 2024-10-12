@@ -18,7 +18,6 @@ connectDB();
 const app = express();
 
 // Middleware
-const cors = require('cors');
 app.use(cors({
   origin: 'https://tyohar.netlify.app/', // replace with your Netlify domain
   credentials: true
