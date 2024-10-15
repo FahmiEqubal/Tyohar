@@ -19,9 +19,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'https://tyohar.netlify.app/', // replace with your Netlify domain
-  credentials: true
+  origin: ['https://tyohar.netlify.app', 'http://localhost:3000'],
+  credentials: true,
 }));
+
 
 app.use(express.json({ limit: '10mb' })); // Increase limit to 10MB
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
